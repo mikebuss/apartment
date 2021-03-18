@@ -57,7 +57,10 @@ module Apartment
     end
 
     def tld_length=(_)
-      Apartment::Deprecation.warn('`config.tld_length` have no effect because it was removed in https://github.com/influitive/apartment/pull/309')
+      # This line throws:
+      # uninitialized constant Apartment::Deprecation (NameError)
+      # 
+      # Apartment::Deprecation.warn('`config.tld_length` have no effect because it was removed in https://github.com/influitive/apartment/pull/309')
     end
 
     def db_config_for(tenant)
